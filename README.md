@@ -2,7 +2,8 @@
 
 Are you ready to embark on a revolutionary shopping experience? Welcome to Odor EasyBuy – your one-stop destination for seamless provision shopping online.
 
-About the Project:
+## About the Project:
+
 As a passionate student at ALX, I am thrilled to present my final project, Odor EasyBuy. This project is not just about creating an e-commerce website; it's about my journey to master React.js while delivering an exceptional online shopping platform.
 
 ## Key Features:
