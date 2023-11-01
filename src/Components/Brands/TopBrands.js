@@ -1,4 +1,5 @@
 import React from 'react'
+import {motion  } from 'framer-motion'
 import { Col, Container, Row, Badge } from 'react-bootstrap'
 import './Brands.css'
 
@@ -28,7 +29,7 @@ function TopBrands({header, data}) {
               </div>
       
               <div className=''>
-                <img className='brand-image w-100 rounded'  src={brands.imgUrl} alt='brand'/>
+                <motion.img whileHover={{scale:1.3}} className='brand-image w-100 rounded'  src={brands.imgUrl} alt='brand'/>
               </div>
             </Col>
 

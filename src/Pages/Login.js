@@ -27,7 +27,7 @@ function Login() {
 
       setLoading(false)
       toast.success('Signed in')
-      navigate('/checkout')
+      navigate('/store')
       console.log(user)
 
     } catch (error){

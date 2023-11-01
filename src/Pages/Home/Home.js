@@ -46,7 +46,6 @@ function Home() {
           <Favorite
             header='My Favorite'
             data = {favoriteProduct}
-            
           />
 
         </section>

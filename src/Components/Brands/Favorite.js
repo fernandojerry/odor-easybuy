@@ -2,6 +2,7 @@
 import React from 'react'
 import { Row, Container, Col} from 'react-bootstrap'
 import './Brands.css'
+import {motion} from 'framer-motion'
 
 function Favorite({header, data}) {
   return (
@@ -27,7 +28,7 @@ function Favorite({header, data}) {
               </div>
       
               <div>
-                <img className='brand-image w-100 rounded'  src={fav.imgUrl} alt='brand'/>
+                <motion.img whileHover={{scale:1.2}} className='brand-image w-100 rounded'  src={fav.imgUrl} alt='brand'/>
               </div>
             </Col>
 

@@ -12,10 +12,10 @@ function Footer() {
 
     const year = new Date().getFullYear()
   return (
-    <footer className='footer bg-dark pt-4 pb-4'>
+    <footer className='footer bg-dark pt-5 pb-5'>
       <Container>
-        <Row gap-5>
-            <Col lg={4} className='p-2'>
+        <Row gap-5 className='d-flex align-items-center justify-content-center'>
+            <Col lg={4} className=''>
                 <div>
                     <NavLink to='/'>
                     <img src={logo} alt="Header logo" className="header__logo" />
@@ -27,7 +27,7 @@ function Footer() {
             </Col>
             <Col lg={4}>
                 <div className='quick__links'>
-                    <h4 className="quick__link__title">Quick Links</h4>
+                    <h4 className="quick__link__title mt-4">Quick Links</h4>
                     <ListGroup as='ul' className='mb-3 '>
                         <ListGroupItem as='li' className='ps-0 border-0 d-flex align-center gap2'>
                             <Link to='/' className='text-decoration-none text-white '>Home</Link>
@@ -47,7 +47,7 @@ function Footer() {
             </Col>
             <Col lg={4}>
             <div className='quick__links'>
-                    <h4 className="quick__link__title">contacts</h4>
+                    <h4 className="quick__link__title mt-4">contacts</h4>
                     <ListGroup as='ul' className='mb-3'>
                         <ListGroupItem as='li' className='ps-0 border-0 d-flex align-center gap-1'>
                             <span>
@@ -70,7 +70,7 @@ function Footer() {
                     </ListGroup>
                 </div>
             </Col>
-            <Col lg={12}>
+            <Col lg={12} className='pt-5'>
                 <p className='small text-white text-center p-1'>Copyright {year} developed by Jerry Nwadinobi. All rights reserved</p>
             </Col>
         </Row>

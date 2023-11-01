@@ -1,6 +1,7 @@
 import React from 'react'
 import { Container, Row, Col, Button, } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import { motion } from "framer-motion"
 
 function Grocery({data}) {
   return (
@@ -13,9 +14,9 @@ function Grocery({data}) {
         <Row  className='mt-3 p-2 rounded'>
           
             {
-                data.map((item) => (
-                    <Col xs={4} md={2} className='d-flex flex-column justify-content-center align-items-center'>
-                        <img className='product__image' src={item.imgUrl} alt="" />
+                data.map((item, index) => (
+                    <Col key={index}  xs={4} md={2} className='d-flex flex-column justify-content-center align-items-center'>
+                        <motion.img whileHover={{scale:1.3}} className='product__image' src={item.imgUrl} alt="" />
                         <p>{item.productName}</p>
                     </Col>
                 ))

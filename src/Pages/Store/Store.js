@@ -1,11 +1,14 @@
 import React, {useState, useEffect} from 'react'
 import Helmet from '../../Components/Helmet'
 import ProductList from '../../Components/Products/ProductList'
-import products from '../../Assets/products'
 import { Col, Container, Row } from 'react-bootstrap';
 import PageShowcase from '../../Components/Hero/PageShwocase';
 
+import useGetData from '../../Custom-hooks/useGetData'
+
 function Store() {
+
+  const {data: products, loading} = useGetData('products')
 
   const [filterdBeverage, setFilterdBeverage] = useState([]);
   const [filterdBeer, setFilterdBeer] = useState([]);
@@ -28,7 +31,7 @@ function Store() {
     setFilterdSoap(filteredSoap)
     setFilterdNoddle(filteredNoddle)
     setFilterdGeneral(filteredGeneral)
-  }, [])
+  }, [products])
   return (
     <Helmet title={'Store'} className='store'>
       <PageShowcase  title='Products'/>
@@ -38,27 +41,44 @@ function Store() {
           <Col lg={12} className='bg-light mb-3'>
             <h2 className='text-center display-5'>Beverages</h2>
           </Col>
-          <ProductList data={filterdBeverage}/>
+          {
+              loading ? <h4>Loading....</h4> : <ProductList data={filterdBeverage}/>
+          }
           <Col lg={12} className='bg-primary mb-3 mt-3'>
             <h2 className='text-center display-5'>Beer</h2>
           </Col>
-          <ProductList data={filterdBeer}/>
+          {
+              loading ? <h4>Loading....</h4> : <ProductList data={filterdBeer}/>
+          }
+          
           <Col lg={12} className='bg-secondary mb-3 mt-3'>
             <h2 className='text-center display-5'>Soft</h2>
           </Col>
-          <ProductList data={filterdSoft}/>
+          {
+              loading ? <h4>Loading....</h4> : <ProductList data={filterdSoft}/>
+          }
+          
           <Col lg={12} className='bg-success mb-3 mt-3'>
             <h2 className='text-center display-5'>Soap</h2>
           </Col>
-          <ProductList data={filterdSoap}/>
+          {
+              loading ? <h4>Loading....</h4> : <ProductList data={filterdSoap}/>
+          }
+          
           <Col lg={12} className='bg-info mt-3 mb-3'>
             <h2 className='text-center display-5'>Noodles</h2>
           </Col>
-          <ProductList data={filterdNoddle}/>
+          {
+              loading ? <h4>Loading....</h4> : <ProductList data={filterdNoddle}/>
+          }
+          
           <Col lg={12} className='bg-warning mt-3 mb-3'>
             <h2 className='text-center display-5'>Generals</h2>
           </Col>
-          <ProductList data={filterdGeneral}/>
+          {
+              loading ? <h4>Loading....</h4> : <ProductList data={filterdGeneral}/>
+          }
+          
         </Row>
         
       </Container>
